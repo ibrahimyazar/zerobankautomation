@@ -45,3 +45,4 @@ Feature: Login to the application
      Given I am on the login page
      Then Click the forget your password link
      And Verifies that "Zero - Forgotten Password" page subtitle is displayed
+
