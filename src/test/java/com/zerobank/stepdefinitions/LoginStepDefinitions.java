@@ -15,9 +15,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginStepDefinitions {
     LoginPage loginPage = new LoginPage();
+    String  actualMessage;
 
     @FindBy(css = "[id = 'signin_button']")
     public WebElement signinButton;
+
+
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
@@ -70,7 +73,7 @@ public class LoginStepDefinitions {
     public void user_verifies_that_message_is_displayed(String string) {
 
         //String expectedMessage = "Login and/or password are wrong.";
-        String actualMessage = loginPage.warningMessageWebElement.getText();
+        actualMessage = loginPage.warningMessageWebElement.getText();
         Assert.assertEquals(string, actualMessage);
         System.out.println(actualMessage);
         System.out.println("Warning message is: " + string);
@@ -87,6 +90,10 @@ public class LoginStepDefinitions {
        // loginPage.loginWithInValidCredentials(blankUser, password);
         loginPage.loginWithCredentials(blankUser, string);
         BrowserUtils.wait(2);
+        actualMessage = loginPage.warningMessageWebElement.getText();
+        Assert.assertEquals(string, actualMessage);
+        System.out.println(actualMessage);
+        System.out.println("Warning message is2: " + string);
 //        String expectedMessage = "Login and/or password are wrong.";
 //        String actualMessage = loginPage.warningMessageWebElement.getText();
 //        Assert.assertEquals(expectedMessage, actualMessage);

@@ -55,8 +55,10 @@ public void loginWithCredentials(String userName, String password){
 
 }
 
-    public void warningMessage(String string){
-   String warningMessagetext =  warningMessageWebElement.getText();
+    public String warningMessage(String warningMessagetext){
+   warningMessagetext =  warningMessageWebElement.getText();
+    return warningMessagetext;
+
 
 }
 
