@@ -24,6 +24,9 @@ public WebElement LoanAccountsElement;
 @FindBy(css = "[class = 'board-header']")
 public List<WebElement> accountTypes;
 
+@FindBy(xpath = "/html/body/div[1]/div[2]/div/div[2]/div/div/div[3]/div/table/thead")
+public List<WebElement> accountTablesColumnsElement;
+
     public void pageTitle(){
      // WebElement title = Driver.get().getTitle();
     }
@@ -42,5 +45,8 @@ public List<WebElement> accountTypes;
 
     }
 
+    public List<String> getAccountTablesColumns(){
+        return BrowserUtils.getListOfString(accountTablesColumnsElement);
+    }
 
 }

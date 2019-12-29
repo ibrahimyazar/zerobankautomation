@@ -8,7 +8,11 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+
 public class AccountSummaryStepDefinitions {
+
+//LoginStepDefinitions a= new LoginStepDefinitions();
+
 
     // first we need to create AccountsummaryPage object in order to calll AccountsummaryPage class
     AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
@@ -18,7 +22,7 @@ public class AccountSummaryStepDefinitions {
         //accountSummaryPage.pageTitle();
         String actualResult = Driver.get().getTitle();
         Assert.assertEquals(string, actualResult);
-
+       // a.actualMessage.isEmpty();
     }
 
     @Then("User Should see {string}, {string}, {string}, {string}")
@@ -50,9 +54,25 @@ public class AccountSummaryStepDefinitions {
         int text = accountSummaryPage.getAccountTypesNames().size();
         System.out.println(text);
 
+    }
 
+    @Then("Account tables must have displayed on the columns")
+    public void account_tables_must_have_displayed_on_the_columns(List<String> dataTable) {
+        System.out.println("Account table columns are: " + dataTable);
+        accountSummaryPage.waitUntilLoaderMaskDisappear();
+        Assert.assertEquals(dataTable, accountSummaryPage.getAccountTablesColumns());
 
     }
+
+    @Then("Account tables must have displayed on the columns that  {string}")
+    public void account_tables_must_have_displayed_on_the_columns_that(String string) {
+        System.out.println("Account table columns are: "+ string);
+       // List<String> names = accountSummaryPage.getAccountTablesColumns();
+
+        accountSummaryPage.waitUntilLoaderMaskDisappear();
+        Assert.assertEquals(string, accountSummaryPage.getAccountTablesColumns());
+    }
+
 
 
 }
