@@ -55,12 +55,9 @@ public void loginWithCredentials(String userName, String password){
 
 }
 
-    public String warningMessage(String warningMessagetext){
-   warningMessagetext =  warningMessageWebElement.getText();
-    return warningMessagetext;
-
-
-}
+    public void warningMessage(){
+  String warningMessageText = Driver.get().findElement(By.cssSelector("[class = 'alert alert-error']")).getText();
+    }
 
    public void selectKeepMeSignInBox(){
     BrowserUtils.waitForClickablility(keepMeSignInBox, 10);
@@ -74,8 +71,9 @@ public void loginWithCredentials(String userName, String password){
 
     public void forgetpasswordLink(){
         forggetYourPassword.click();
-
     }
+
+
 
 
 }
