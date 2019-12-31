@@ -1,8 +1,10 @@
 Feature: Testing Account Activity Page
 
   Background: Open login page and logged in as a authorized user
-    Given I am on the login page
-    When User logs in as an authorized user
+    Given User is on main page
+    When User click the "signing" button
+    Then User enters authorized information
+
 
   @account_activity_title
   Scenario: Account Activity page should have the title Zero - Account activity
