@@ -1,7 +1,9 @@
 package com.zerobank.utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
@@ -192,6 +194,72 @@ public class BrowserUtils {
         }
         return listOfStrings;
     }
+    /**
+     * Verifies whether the element matching the provided locator is displayed on page
+     *
+     * @param by
+     * @throws AssertionError if the element matching the provided locator is not found or not displayed
+     */
+    public static void verifyElementDisplayed(By by) {
+        try {
+            Assert.assertTrue("Element not visible: " + by, Driver.get().findElement(by).isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            Assert.fail("Element not found: " + by);
+
+        }
+    }
+
+    /**
+     * Verifies whether the element matching the provided locator is NOT displayed on page
+     *
+     * @param by
+     * @throws AssertionError the element matching the provided locator is displayed
+     */
+    public static void verifyElementNotDisplayed(By by) {
+        try {
+            Assert.assertFalse("Element should not be visible: " + by, Driver.get().findElement(by).isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+
+    /**
+     * Verifies whether the element is displayed on page
+     *
+     * @param element
+     * @throws AssertionError if the element is not found or not displayed
+     */
+    public static void verifyElementDisplayed(WebElement element) {
+        try {
+            Assert.assertTrue("Element not visible: " + element, element.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            Assert.fail("Element not found: " + element);
+
+        }
+    }
+
+    /**
+     * Scrolls down to an element using JavaScript
+     *
+     * @param element
+     */
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * Performs double click action on an element
+     *
+     * @param element
+     */
+    public static void doubleClick(WebElement element) {
+        new Actions(Driver.get()).doubleClick(element).build().perform();
+    }
+
 
 }
 

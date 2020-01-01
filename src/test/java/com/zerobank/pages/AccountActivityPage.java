@@ -12,7 +12,8 @@ public class AccountActivityPage extends BasePage {
     public WebElement accountActivityElement;
 
     @FindBy(id = "aa_accountId")
-    public WebElement selectElement;
+    public WebElement SelectElement;
+
 
     @FindBy(css = "[value = '1']")
     public WebElement savingsElement;
@@ -32,11 +33,13 @@ public class AccountActivityPage extends BasePage {
         String title = Driver.get().getTitle();
     }
 
-    public void DefaultSavings(){
-        Select select = new Select(selectElement);
-        select.selectByValue("Savings");
-
-    }
+//    public void DefaultSavings(){
+//        Select select = new Select(SelectElement);
+//        select.selectByValue("1");
+//
+//
+//
+//    }
 
 
 }
