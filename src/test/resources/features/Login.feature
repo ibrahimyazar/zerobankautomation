@@ -26,6 +26,7 @@ Feature: Login to the application
     | username      |               |
     |               | password      |
     |               |               |
+    | USERNAME      | PASSWORD      |
     | USERNAME      | password      |
     | username      | PASSWORD      |
 

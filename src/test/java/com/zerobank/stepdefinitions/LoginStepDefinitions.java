@@ -64,6 +64,7 @@ public class LoginStepDefinitions {
 //        boolean keepMeSignInBox = loginPage.keepMeSignInBox.isSelected();   // it is also work
 //        Assert.assertTrue(keepMeSignInBox);
         Assert.assertTrue(loginPage.keepMeSignInBox.isSelected());
+        BrowserUtils.wait(3);
 
     }
 
