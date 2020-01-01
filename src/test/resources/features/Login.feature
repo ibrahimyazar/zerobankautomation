@@ -4,7 +4,7 @@ Feature: Login to the application
   As a authorized user should be able to login to the application
   under with valid credentials.
 
-  @login_valid_credentials @smoke_test
+  @login_valid_credentials @smoke_test @login_invalid_credentials
   Scenario: Login the application
   Given User is on main page
   When User click the "signing" button
@@ -26,6 +26,8 @@ Feature: Login to the application
     | username      |               |
     |               | password      |
     |               |               |
+    | USERNAME      | password      |
+    | username      | PASSWORD      |
 
   @keep_me_signed_in
   Scenario: Select the keep me sign in box
