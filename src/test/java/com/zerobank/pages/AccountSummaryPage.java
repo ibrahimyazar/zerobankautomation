@@ -28,7 +28,7 @@ public List<WebElement> accountTypes;
 public List<WebElement> accountTablesColumnsElement;
 
     public void pageTitle(){
-     // WebElement title = Driver.get().getTitle();
+        Driver.get().getTitle();
     }
 
     public void accountTypes(){
