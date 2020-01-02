@@ -44,6 +44,22 @@ Feature: Login to the application
      Then Click the forget your password link
      And Verifies that "Zero - Forgotten Password" page subtitle is displayed
 
+#  @navigate
+#  Scenario: Navigate to submodules
+#    Given User is on main page
+#    When User click the "signing" button
+#    Then User enters authorized information
+#    And User navigates to "module" then to "sub module"
+#    Then Page title should be "title"
+#
+
+#  @login_with_roles_ddt2
+#  Scenario Outline: Login as <role> and verify page title is correct
+#    Given user is on the login page
+#    Then user logs in as "<role>"
+#    Then user navigates to "<module>" then to "<sub module>"
+#    Then the page title should be "<title>"
+
 
 
 #  @login

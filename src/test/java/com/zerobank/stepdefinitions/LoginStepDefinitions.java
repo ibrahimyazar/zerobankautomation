@@ -80,6 +80,15 @@ public class LoginStepDefinitions {
         Assert.assertEquals(string, title);
     }
 
+//    @Then("User navigates to {string} then to {string}")
+//    public void user_navigates_to_then_to(String string, String string2) {
+//        loginPage.navigateTo(string, string2);
+//    }
+//
+//    @Then("Page title should be {string}")
+//    public void page_title_should_be(String string) {
+//
+//    }
 
 
 
